@@ -1,0 +1,256 @@
+body{
+  font-family: 'Lato', sans-serif;
+
+}
+.fuente{
+  font-family: 'Lato', sans-serif;
+}
+
+header{
+  display: inline-flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+  width: 100vw;
+  padding: 5px;
+  height: 60px;
+  box-shadow: 3px 5px 11px 1px rgba(0,0,0,0.75);
+}
+
+.diseniologo{
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2%;
+}
+
+.utnLogo{
+  width:120px;
+  height:52px;
+}
+.diseniologo img{
+  width:45px;
+  margin-bottom: 0px;
+}
+.diseniologo p{
+  margin-top: 4px;
+}
+
+.main_container{
+  width:100vw;
+  position: absolute;
+  top:70px;
+  z-index: -1;
+  font-size: 22px;
+  /* background-color: rgb(220, 230, 245); */
+  background-color: rgb(245, 245, 245);
+  height: 100vh;
+
+}
+.encabezado{
+  font-size: 45px;
+  margin: 15px;
+  padding: 15px;
+}
+.tabla{
+  margin:10px;
+  width:95%;
+}
+.tabla thead{
+  margin-bottom: 10px;
+  width:100%;
+  margin-bottom: 20px;
+}
+
+.tabla th{
+  text-align: left;
+  padding: 10px;
+  background-color: rgb(36, 35, 33);
+  color:white;
+}
+.tabla td{
+  font-family: 'Lato', sans-serif;
+  height:45px;
+  font-size: 16px;
+  padding-left: 5px;
+  vertical-align: middle;
+  border-bottom: 1px solid grey;
+
+}
+.tabla tr:nth-child(odd) {
+  background: #FFF
+}
+
+.tabla tr:hover {
+  background-color: rgb(240, 173, 186);
+}
+
+.btn{
+  border:0px;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  background-color: grey;
+  border-radius: 5px;
+  color:white;
+  cursor:pointer;
+}
+.btn-edit{
+  background-color: orange;
+  padding: 7px;
+
+}
+.btn-border{
+  border:1px solid black;
+  color: black;
+  background: none;
+}
+.btn-border-blue{
+  padding: 7px;
+  margin: 10px;
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 5px;
+  color:rgb(10, 123, 199);
+  border: 1px solid rgb(10, 123, 199);
+  text-decoration: none;
+}
+#inputUsuario{
+  position:fixed;
+  right:25px;
+  top:100px;
+  font-size:16px;
+  height: 25px;
+  border:0px;
+  padding: 5px;
+  background-color: rgb(72, 73, 74);
+  background-color: white;
+  border-bottom:4px solid rgb(72, 73, 74);
+}
+
+#modalEliminar{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modalContent{
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.btn-close-modal {
+  cursor:pointer;
+  float:right;
+  background-color: grey;
+  border:0px;
+  color:white;
+  padding: 7px;
+  border-radius: 5px;
+  font-size:16px;
+}
+.btn-cancelar{
+  border:0px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: grey;
+  border-radius: 5px;
+  color:white;
+  cursor:pointer;
+
+}
+.btn-rojo{
+  border:0px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: grey;
+  border-radius: 5px;
+  background-color:rgb(199, 13, 0);
+  cursor:pointer;
+  color:white;
+}
+.btn-verde{
+  border:0px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: grey;
+  border-radius: 5px;
+  margin:5px;
+  background-color:rgb(68, 168, 68);
+  cursor:pointer;
+  color:white;
+}
+
+
+/* ESTILOS NUEVO USUARIO */
+.contenedor-carta-usuario{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width:100vw;
+  height: 90%;
+  background-color: rgb(245, 245, 245);
+
+}
+
+.carta-usuario{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  background-color: white;
+  border-bottom:4px solid rgb(72, 73, 74);
+  padding: 10px;
+}
+.imagen-perfil{
+  width:120px;
+  margin:15px;
+  margin-top:5px;
+  cursor:pointer;
+}
+.input-datos{
+  font-size:16px;
+  height: 25px;
+  border:0px;
+  width:100%;
+  padding: 5px;
+  background-color: rgb(72, 73, 74);
+  background-color: white;
+  border-bottom:4px solid rgb(72, 73, 74);
+}
+.input-select{
+  width:100%;
+  font-size:16px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color: white;
+  border-radius:0px;
+}
+.form-cargar-usuario{
+  display:flex;
+  flex-direction:row;
+}
+@media (max-width:450px) {
+  .form-cargar-usuario{
+    width:90%;;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 10px;
+  }
+}

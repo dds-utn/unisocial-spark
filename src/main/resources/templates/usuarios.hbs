@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/27517fada0.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/js/generales.js"></script>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="icon" href="img/logosolo.png">
+    <link rel="stylesheet" href="/css/usuarios.estilos.css">
+    <title>Usuarios</title>
+  </head>
+  <body id="body">
+    <header>
+      <img src="/img/untlogo.png" alt="utn logo" class="utnLogo">
+      <div class="diseniologo">
+        <img src="/img/logosolo.png" alt="diseniologo" style="">
+        <p>Diseño de Sistemas</p>
+      </div>
+
+    </header>
+    <div class="main_container">
+      <h1 class="encabezado"><i class="fas fa-users"></i> Usuarios</h1>
+      <input type="text" name="" value="" placeholder="Buscar" id="inputUsuario">
+      <a href="" class="btn-border-blue fuente"><i class="fas fa-user-plus" style="margin-bottom:25px;"></i> Nuevo usuario</a>
+      <table class="tabla" id="tabla">
+        <thead>
+          <th><i class="fas fa-user"></i> Usuario</th>
+          <th><i class="fas fa-envelope"></i> Email</th>
+          <th><i class="fas fa-phone"></i> Teléfono</th>
+          <th><i class="fas fa-id-card-alt"></i> Legajo</th>
+
+          <th><i class="fas fa-user-cog"></i> Perfil</th>
+          <th><i class="fas fa-tools"></i> Acciones</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td><i class="fas fa-user"></i> Lucas Saclier</td>
+            <td>saclier@diseniosistemas.com.ar</td>
+            <td>1536617317</td>
+            <td>149.634-7</td>
+            <td>Admin</td>
+            <td>
+                <a href="" name="button" style="margin:0px;" class="btn btn-border btn-border-blue" ><i class="far fa-eye"></i></a>
+                <a href="" name="button" class=" btn btn-edit"><i class="fas fa-user-edit"></i></a>
+                <button type="button" name="button" class="btn" onclick="confirmarEliminacion()"><i class="fas fa-trash"></i></button>
+            </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+
+  <!-- ================= MODAL ELIMINACION ================== -->
+  <div class="modalEliminar modal" id="modalEliminar">
+    <div class="modalContent">
+      <p>¿Desea eliminar el usuario?</p>
+      <button type="button" name="button" class="btn-close-modal" onclick="cerrarModal()" ><i class="fas fa-times-circle"></i></button>
+      <br>
+      <div class="">
+        <button type="button" name="button" class="btn-rojo" onclick="">Eliminar</button>
+        <button type="button" name="button" class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <!-- ================= FIN MODAL ELIMINACION ================== -->
+
+</html>
