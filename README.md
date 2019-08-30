@@ -1,6 +1,18 @@
 # Unisocial - MVC - Spark
 ###  Dominio
 Nos encargaremos de seguir resolviendo el dominio que comenzamos a atacar en el repositorio [Unisocial-Hibernate](https://github.com/dds-utn/unisocial-hibernate "Unisocial-Hibernate").
+
+### ¿Qué es MVC?
+Modelo-vista-controlador (MVC) es un patrón de arquitectura de software, que separa la arquitectura en tres componentes: el modelo, la vista y el controlador.
+
+`El Modelo`: Está vinculado con la representación de la datos con la cual el sistema opera, por lo tanto gestiona todos los accesos a dichos datos, tanto consultas como actualizaciones, pudiendo también implementar los privilegios de acceso.
+
+`El Controlador`: Responde a eventos (usualmente acciones del usuario) e invoca peticiones al 'modelo' cuando se hace alguna solicitud sobre los datos Se podría decir que el 'controlador' hace de intermediario entre la vista y el modelo.
+
+`La Vista`: Presenta los datos y su forma de interactuar en un formato adecuado para el usuario.
+
+![](https://miro.medium.com/max/1060/0*C5ykaWN2RzlbC47o.jpg)
+
 ### Cuestiones de persistencia
 El diseño inicial planteado ofrece la posibilidad de trabajar con persistencia en memoria o en base de datos.
 Para poder cambiar la forma de persistencia, se debe modificar el atributo `useDataBase` de la clase `Config` la cual se encuentra en el package Config:
