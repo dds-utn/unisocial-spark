@@ -12,10 +12,10 @@ public class RepositorioAporte extends Repositorio {
     }
 
     public List<Aporte> buscarTodos(){
-        return this.dao.buscarTodos(Aporte.class);
+        return this.dao.buscarTodos();
     }
 
     public Aporte buscar(int id){
-        return this.dao.buscar(Aporte.class, id);
+        return this.dao.buscar(id);
     }
 }

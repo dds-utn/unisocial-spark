@@ -67,12 +67,12 @@ public class DAOMemoriaUsuario implements DAO {
     }
 
     @Override
-    public <T> List<T> buscarTodos(Class<T> clase) {
+    public <T> List<T> buscarTodos() {
         return (List<T>) this.usuarios;
     }
 
     @Override
-    public <T> T buscar(Class<T> clase, int id) {
+    public <T> T buscar(int id) {
         return (T) this.usuarios
                 .stream()
                 .filter(u -> u.getId() == id)

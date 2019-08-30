@@ -7,12 +7,12 @@ import java.util.List;
 
 public class DAOMySQLUsuario implements DAO {
     @Override
-    public <T> List<T> buscarTodos(Class<T> clase) {
+    public <T> List<T> buscarTodos() {
         return (List<T>) UsuarioModel.getInstance().buscarTodos();
     }
 
     @Override
-    public <T> T buscar(Class<T> clase, int id) {
+    public <T> T buscar(int id) {
         return (T) UsuarioModel.getInstance().buscar(id);
     }
 
