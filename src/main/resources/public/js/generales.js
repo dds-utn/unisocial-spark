@@ -34,8 +34,20 @@ $(document).ready(function(){
   });
 });
 
-function confirmarEliminacion(){
+function confirmarEliminacion(id){
+  document.getElementById("userId").value = id;
   document.getElementById("modalEliminar").style.display = 'block';
+}
+
+function eliminarUsuario(){
+    var id = document.getElementById("userId").value;
+    $.ajax({
+        type: "DELETE",
+        url: "usuario/"+id,
+        success: function(result){
+            location.reload(true);
+        }
+    });
 }
 
 function cerrarModal(){

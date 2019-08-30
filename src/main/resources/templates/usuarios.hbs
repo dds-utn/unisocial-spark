@@ -24,7 +24,7 @@
     <div class="main_container">
       <h1 class="encabezado"><i class="fas fa-users"></i> Usuarios</h1>
       <input type="text" name="" value="" placeholder="Buscar" id="inputUsuario">
-      <a href="" class="btn-border-blue fuente"><i class="fas fa-user-plus" style="margin-bottom:25px;"></i> Nuevo usuario</a>
+      <a href="/usuario" class="btn-border-blue fuente"><i class="fas fa-user-plus" style="margin-bottom:25px;"></i> Nuevo usuario</a>
       <table class="tabla" id="tabla">
         <thead>
           <th><i class="fas fa-user"></i> Usuario</th>
@@ -36,18 +36,20 @@
           <th><i class="fas fa-tools"></i> Acciones</th>
         </thead>
         <tbody>
+        {{#each usuarios}}
         <tr>
-            <td><i class="fas fa-user"></i> Lucas Saclier</td>
-            <td>saclier@diseniosistemas.com.ar</td>
-            <td>1536617317</td>
-            <td>149.634-7</td>
-            <td>Admin</td>
+            <td><i class="fas fa-user"></i> {{nombre}} {{apellido}}</td>
+            <td>{{email}}</td>
+            <td>{{telefono}}</td>
+            <td>{{legajo}}</td>
+            <td>{{rol.nombre}}</td>
             <td>
-                <a href="" name="button" style="margin:0px;" class="btn btn-border btn-border-blue" ><i class="far fa-eye"></i></a>
-                <a href="" name="button" class=" btn btn-edit"><i class="fas fa-user-edit"></i></a>
-                <button type="button" name="button" class="btn" onclick="confirmarEliminacion()"><i class="fas fa-trash"></i></button>
+                <!--<a href="/usuario/{{id}}" name="button" style="margin:0px;" class="btn btn-border btn-border-blue" ><i class="far fa-eye"></i></a>-->
+                <a href="/usuario/{{id}}" name="button" class=" btn btn-edit"><i class="fas fa-user-edit"></i></a>
+                 <button type="button" name="button" class="btn" onclick="confirmarEliminacion('{{id}}')"><i class="fas fa-trash"></i></button>
             </td>
         </tr>
+        {{/each}}
         </tbody>
       </table>
     </div>
@@ -57,11 +59,12 @@
   <!-- ================= MODAL ELIMINACION ================== -->
   <div class="modalEliminar modal" id="modalEliminar">
     <div class="modalContent">
+        <input id="userId" type="hidden" value="">
       <p>¿Desea eliminar el usuario?</p>
       <button type="button" name="button" class="btn-close-modal" onclick="cerrarModal()" ><i class="fas fa-times-circle"></i></button>
       <br>
       <div class="">
-        <button type="button" name="button" class="btn-rojo" onclick="">Eliminar</button>
+        <button type="button" name="button" class="btn-rojo" onclick="eliminarUsuario()">Eliminar</button>
         <button type="button" name="button" class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
       </div>
     </div>

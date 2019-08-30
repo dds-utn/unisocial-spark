@@ -24,7 +24,7 @@
 
       <div class="contenedor-carta-usuario">
         <div class="carta-usuario">
-          <form class="" action="" method="post" style="">
+          <form class="" {{#if usuario}} action="/usuario/{{usuario.id}}" method="post" {{else}} action="/usuario" method="post" {{/if}} style="">
 
             <div class="form-cargar-usuario">
               <div class="" style="text-align:center;">
@@ -35,37 +35,37 @@
               <div class="" style="margin:40px;">
                 <label><i class="fas fa-user"></i> Usuario</label>
                 <br>
-                <input type="text" name="nombreDeUsuario"  class="input-datos" placeholder="Usuario" >
+                <input type="text" name="nombreDeUsuario"  class="input-datos" placeholder="Usuario" {{#if usuario}}value="{{usuario.nombreDeUsuario}}" {{/if}}>
                 <br>
                 <br>
                 <label><i class="fas fa-file-signature"></i>  Nombre</label>
                 <br>
-                <input type="text" name="nombre" class="input-datos" placeholder="Nombre">
+                <input type="text" name="nombre" {{#if usuario}} value="{{usuario.nombre}}" {{/if}} class="input-datos" placeholder="Nombre">
                 <br>
                 <br>
                 <label><i class="fas fa-file-signature"></i>  Apellido</label>
                 <br>
-                <input type="text" name="apellido" class="input-datos" placeholder="Apellido">
+                <input type="text" name="apellido" class="input-datos" {{#if usuario}} value="{{usuario.apellido}}" {{/if}} placeholder="Apellido">
                 <br>
                 <br>
                 <label><i class="fas fa-calendar-alt"> </i> Fecha de Nacimiento</label>
                 <br>
-                <input type="date" name="fechaDeNacimiento" class="input-datos"  placeholder="Fecha de Nacimiento">
+                <input type="date" name="fechaDeNacimiento" class="input-datos" {{#if usuario}} value="{{usuario.fechaDeNacimiento}}"{{/if}} placeholder="Fecha de Nacimiento">
               </div>
               <div class="" style="margin:40px;">
                 <label><i class="fas fa-envelope"></i> E-mail</label>
                 <br>
-                <input type="email"  class="input-datos"name="email"  placeholder="E-mail">
+                <input type="email"  class="input-datos"name="email" {{#if usuario}} value="{{usuario.email}}" {{/if}} placeholder="E-mail">
                 <br>
                 <br>
                 <label><i class="fas fa-phone"></i> Teléfono</label>
                 <br>
-                <input type="number"  class="input-datos" name="telefono" placeholder="Teléfono">
+                <input type="number"  class="input-datos" name="telefono" {{#if usuario}} value="{{usuario.telefono}}" {{/if}} placeholder="Teléfono">
                 <br>
                 <br>
                 <label><i class="fas fa-id-card-alt"> </i> Nº Legajo</label>
                 <br>
-                <input type="text" name="legajo" class="input-datos"  placeholder="Nº Legajo">
+                <input type="text" name="legajo" class="input-datos" {{#if usuario}} value="{{usuario.legajo}}" {{/if}} placeholder="Nº Legajo">
                 <br>
                 <br>
                 <label><i class="fas fa-unlock-alt"> </i> Contraseña</label>
@@ -75,17 +75,25 @@
                 <br>
                 <label><i class="fas fa-user-cog"></i>  Perfil</label>
                 <br>
-                <select class="input-select" name="">
-                   <option>Seleccionar</option>
-                   <option>Administrador General</option>
-                   <option>Administrador</option>
-                   <option>Usuario</option>
-                </select>
+                {{#if usuario}}
+                <input type="text" name="" value="{{usuario.rol.nombre}}" class="input-datos" placeholder="Perfil">
+                {{else}}
+                <select class="input-select" name="rol">
+                   <option selected disabled>Seleccionar</option>
+                     {{#each roles}}
+                       <option value="{{id}}">{{nombre}}</option>
+                     {{/each}}
+                 </select>
+                {{/if}}
 
               </div>
             </div>
-            <input type="submit" name="" class="btn-verde" style="float:right;"  value="Crear usuario">
-            <a href="" class="btn-border-blue" style="">Volver</a>
+            {{#if usuario}}
+                <input type="submit" name="" class="btn-verde" style="float:right;"  value="Guardar cambios">
+            {{else}}
+                <input type="submit" name="" class="btn-verde" style="float:right;"  value="Crear usuario">
+            {{/if}}
+            <a href="/usuarios" class="btn-border-blue" style="">Volver</a>
           </form>
         </div>
       </div>
