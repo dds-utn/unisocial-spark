@@ -1,5 +1,5 @@
 package config;
 
 public class Config {
-    public static boolean useDataBase = true;
+    public static boolean useDataBase = false;
 }
