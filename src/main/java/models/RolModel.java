@@ -1,6 +1,5 @@
 package models;
 
-import db.EntityManagerHelper;
 import entities.Rol;
 
 import java.util.List;
@@ -21,11 +20,11 @@ public class RolModel extends Model {
 
     @Override
     public List<Rol> buscarTodos() {
-        return EntityManagerHelper.getEntityManager().createQuery("from Rol").getResultList();
+        return entityManager().createQuery("from Rol").getResultList();
     }
 
     @Override
     public Rol buscar(int id) {
-        return EntityManagerHelper.getEntityManager().find(Rol.class, id);
+        return entityManager().find(Rol.class, id);
     }
 }

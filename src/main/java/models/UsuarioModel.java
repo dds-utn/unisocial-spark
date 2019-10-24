@@ -1,6 +1,5 @@
 package models;
 
-import db.EntityManagerHelper;
 import entities.Usuario;
 
 import java.util.List;
@@ -17,12 +16,12 @@ public class UsuarioModel extends Model {
 
     @Override
     public List<Usuario> buscarTodos(){
-        return EntityManagerHelper.getEntityManager().createQuery("from Usuario").getResultList();
+        return entityManager().createQuery("from Usuario").getResultList();
     }
 
     @Override
     public Usuario buscar(int id){
-        return EntityManagerHelper.getEntityManager().find(Usuario.class, id);
+        return entityManager().find(Usuario.class, id);
     }
 
 }

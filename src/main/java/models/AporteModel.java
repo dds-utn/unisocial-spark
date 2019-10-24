@@ -1,6 +1,5 @@
 package models;
 
-import db.EntityManagerHelper;
 import entities.Aporte;
 
 import java.util.List;
@@ -16,10 +15,10 @@ public class AporteModel extends Model {
     }
 
     public List<Aporte> buscarTodos(){
-        return EntityManagerHelper.getEntityManager().createQuery("from Aporte").getResultList();
+        return entityManager().createQuery("from Aporte").getResultList();
     }
 
     public Aporte buscar(int id){
-        return EntityManagerHelper.getEntityManager().find(Aporte.class, id);
+        return entityManager().find(Aporte.class, id);
     }
 }

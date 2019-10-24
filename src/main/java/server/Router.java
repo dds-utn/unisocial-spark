@@ -2,6 +2,7 @@ package server;
 
 import controllers.UsuarioController;
 import models.UsuarioModel;
+import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 import repositories.daos.DAOMySQL;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -39,5 +40,9 @@ public class Router {
         Spark.post("/usuario", usuarioController::guardar);
 
         Spark.delete("/usuario/:id", usuarioController::eliminar);
+
+        Spark.after((req, res) -> {
+            PerThreadEntityManagers.closeEntityManager();
+        });
     }
 }

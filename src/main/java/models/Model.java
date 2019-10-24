@@ -1,28 +1,27 @@
 package models;
 
-import db.EntityManagerHelper;
-import entities.Aporte;
-import entities.Usuario;
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
 import java.util.List;
 
-public abstract class Model {
+public abstract class Model implements WithGlobalEntityManager, TransactionalOps {
     public void agregar(Object object){
-        EntityManagerHelper.getEntityManager().getTransaction().begin();
-        EntityManagerHelper.getEntityManager().persist(object);
-        EntityManagerHelper.getEntityManager().getTransaction().commit();
+        withTransaction(() -> {
+            entityManager().persist(object);
+        });
     }
 
     public void modificar(Object object){
-        EntityManagerHelper.getEntityManager().getTransaction().begin();
-        EntityManagerHelper.getEntityManager().merge(object);
-        EntityManagerHelper.getEntityManager().getTransaction().commit();
+        withTransaction(() -> {
+            entityManager().merge(object);
+        });
     }
 
     public void eliminar(Object object){
-        EntityManagerHelper.getEntityManager().getTransaction().begin();
-        EntityManagerHelper.getEntityManager().remove(object);
-        EntityManagerHelper.getEntityManager().getTransaction().commit();
+        withTransaction(() -> {
+            entityManager().remove(object);
+        });
     }
 
     public abstract <T> List<T> buscarTodos();
