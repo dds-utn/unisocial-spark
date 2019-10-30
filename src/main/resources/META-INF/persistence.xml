@@ -6,7 +6,7 @@
     version="1.0"> 
   
     <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
-    	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     	
     	<class></class>
     	 
