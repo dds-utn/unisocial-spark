@@ -15,11 +15,15 @@
   <body id="body">
     <header>
       <img src="/img/untlogo.png" alt="utn logo" class="utnLogo">
+        {{#if usuario}}
+            <div>
+                <label>¡Hola {{usuario.nombre}} {{usuario.apellido}}!</label>
+            </div>
+        {{/if}}
       <div class="diseniologo">
         <img src="/img/logosolo.png" alt="diseniologo" style="">
         <p>Diseño de Sistemas</p>
       </div>
-
     </header>
     <div class="main_container">
       <h1 class="encabezado"><i class="fas fa-users"></i> Usuarios</h1>
