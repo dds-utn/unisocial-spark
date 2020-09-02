@@ -1,8 +1,8 @@
-package repositories.testMemoData;
+package domain.repositories.testMemoData;
 
-import entities.EntidadPersistente;
-import entities.Rol;
-import entities.Usuario;
+import domain.entities.EntidadPersistente;
+import domain.entities.Rol;
+import domain.entities.Usuario;
 
 import java.util.ArrayList;
 import java.util.Collections;

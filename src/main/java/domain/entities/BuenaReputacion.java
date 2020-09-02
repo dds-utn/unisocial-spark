@@ -1,8 +1,7 @@
-package entities;
+package domain.entities;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity

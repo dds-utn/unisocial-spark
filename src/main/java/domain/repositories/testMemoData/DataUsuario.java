@@ -1,9 +1,10 @@
-package repositories.testMemoData;
+package domain.repositories.testMemoData;
 
-import entities.EntidadPersistente;
-import entities.Usuario;
-import repositories.RepositorioRol;
-import repositories.daos.DAOMemoria;
+import domain.entities.EntidadPersistente;
+import domain.entities.Rol;
+import domain.entities.Usuario;
+import domain.repositories.Repositorio;
+import domain.repositories.factories.FactoryRepositorio;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +15,7 @@ public class DataUsuario {
 
     public static List<EntidadPersistente> getList(){
         if(usuarios.size() == 0) {
-            RepositorioRol repoRol = RepositorioRol.getInstance(new DAOMemoria(DataRol.getList()));
+            Repositorio<Rol> repoRol = FactoryRepositorio.get(Rol.class);
 
             Usuario lucas = new Usuario();
             lucas.setNombre("Lucas");

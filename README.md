@@ -20,7 +20,7 @@ Para poder cambiar la forma de persistencia, se debe modificar el atributo `useD
 Como seguimos los pasos y las bases planteadas en el repositorio anterior (Unisocial-Hibernate), se deberá tener instalado [MySQL Server 5.6](https://dev.mysql.com/downloads/mysql/5.6.html "MySQL Server 5.6") y [MySQL Workbench](https://dev.mysql.com/downloads/workbench/ "MySQL Workbench").
 - Con `useDataBase = false;` la persistencia se hará en memoria. En este caso, brindamos algunas listas básicas para tener algunos objetos cargados en memoria. Estas listas se pueden encontrar en las clases que están en el package `testMemoData`, el cual, a su vez, se encuentra dentro del package `repositories`.
 
-Para "jugar" con los objetos del dominio, diseñamos repositorios que entienden, básicamente, los mensajes:
+Para "jugar" con los objetos del dominio diseñamos un repositorio genérico que entiende, básicamente, los mensajes:
 1. `buscar(int id)` busca y devuelve el objeto que matchee con el id dado. Supone que siempre existe un objeto con ese id.
 2. `buscarTodos()` busca y devuelve todos los objetos del repositorio en cuestión.
 3. `agregar(Object unObjeto)` persiste un objeto en el medio persistente.
@@ -29,7 +29,7 @@ Para "jugar" con los objetos del dominio, diseñamos repositorios que entienden,
 
 Pero... ¿cómo trabajamos con un repositorio? Supongamos que queremos buscar al Usuario de id 1. Podríamos hacer algo como:
 ```java
-RepositorioUsuario repo = FactoryRepositorioUsuario.get();
+Repositorio<Usuario> repo = FactoryRepositorio.get(Usuario.class);
 Usuario usuario = repo.buscar(1);
 ```
 ### Vistas (HTML)
@@ -47,3 +47,7 @@ Dejamos a disposición una hoja de estilos y un archivo JavaScript, los cuales s
 - Los archivos JS se encuentran en `src/resources/public/js`
 
 Todos los archivos de estos tipos deberían situarse en estas carpetas para mantener la organización y prolijidad de todo el proyecto.
+
+### Extras
+En la [branch](https://github.com/dds-utn/unisocial-spark/tree/resuelto "branch") donde está el ejercicio resuelto dejamos el ejemplo de un Rest Controller básico, donde utilizamos la [biblioteca Gson ](https://mvnrepository.com/artifact/com.google.code.gson/gson "biblioteca Gson ")para convertir los objetos Java a Strings con formato Json.
+Por último, también consideramos el manejo de [sesiones](http://sparkjava.com/documentation#sessions "sesiones") (solamente disponible con persistencia en base de datos) y la utilización de un Middleware (propio).
